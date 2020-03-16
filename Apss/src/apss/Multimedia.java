@@ -34,6 +34,7 @@ public class Multimedia extends javax.swing.JFrame {
         duaD = new javax.swing.JLabel();
         tigaD = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        lblBack = new javax.swing.JLabel();
         mm = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -87,7 +88,17 @@ public class Multimedia extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 610, 40);
+        jLabel1.setBounds(40, 0, 570, 40);
+
+        lblBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jurusanimage/beck.png"))); // NOI18N
+        lblBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblBackMouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblBack);
+        lblBack.setBounds(5, 5, 30, 30);
 
         mm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mmimage/mm.png"))); // NOI18N
         mm.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -103,7 +114,7 @@ public class Multimedia extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void closeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeMouseClicked
-        dispose();
+        new Confirm().show();
     }//GEN-LAST:event_closeMouseClicked
 
     private void cinemaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cinemaMouseClicked
@@ -127,13 +138,19 @@ public class Multimedia extends javax.swing.JFrame {
         int y = evt.getYOnScreen();
         
         this.setLocation(x - dragxmouse, y - dragymouse);
-        System.out.println(x + "," +y);
+//        System.out.println(x + "," +y);
     }//GEN-LAST:event_jLabel1MouseDragged
 
     private void jLabel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MousePressed
         dragxmouse = evt.getX();
         dragymouse = evt.getY();
     }//GEN-LAST:event_jLabel1MousePressed
+
+    private void lblBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBackMouseClicked
+        // TODO add your handling code here:
+        new Jurusan().show();
+        dispose();
+    }//GEN-LAST:event_lblBackMouseClicked
 
     /**
      * @param args the command line arguments
@@ -175,6 +192,7 @@ public class Multimedia extends javax.swing.JFrame {
     private javax.swing.JLabel close;
     private javax.swing.JLabel duaD;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lblBack;
     private javax.swing.JLabel mm;
     private javax.swing.JLabel tigaD;
     // End of variables declaration//GEN-END:variables
