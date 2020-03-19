@@ -71,6 +71,11 @@ public class Jurusan extends javax.swing.JFrame {
         lblRpl.setBounds(64, 97, 122, 154);
 
         lblMm.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblMm.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblMmMouseClicked(evt);
+            }
+        });
         getContentPane().add(lblMm);
         lblMm.setBounds(260, 97, 122, 154);
 
@@ -98,6 +103,12 @@ public class Jurusan extends javax.swing.JFrame {
         dragxmouse = evt.getX();
         dragymouse = evt.getY();
     }//GEN-LAST:event_jLabel1MousePressed
+
+    private void lblMmMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMmMouseClicked
+        Tkj b = new Tkj();
+        b.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_lblMmMouseClicked
 
     /**
      * @param args the command line arguments
