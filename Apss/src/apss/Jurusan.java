@@ -123,16 +123,12 @@ public class Jurusan extends javax.swing.JFrame {
     }//GEN-LAST:event_lblRplMouseClicked
 
     private void lblMmMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMmMouseClicked
-        Multimedia a=new Multimedia();
-        a.setVisible(true);
-        
+        new Multimedia().show();        
         dispose();
     }//GEN-LAST:event_lblMmMouseClicked
 
     private void lblTkjMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTkjMouseClicked
-        Tkj b = new Tkj();
-        b.setVisible(true);
-        
+        new Tkj().show();
         dispose();
     }//GEN-LAST:event_lblTkjMouseClicked
 

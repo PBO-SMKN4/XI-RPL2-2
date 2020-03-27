@@ -30,6 +30,9 @@ public class MenuRpl extends javax.swing.JFrame {
         lblClose = new javax.swing.JLabel();
         lblBack = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        btnDesktop = new javax.swing.JButton();
+        btnWeb = new javax.swing.JButton();
+        btnAndro = new javax.swing.JButton();
         lblBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
@@ -68,6 +71,39 @@ public class MenuRpl extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(40, 0, 570, 40);
 
+        btnDesktop.setBorder(null);
+        btnDesktop.setContentAreaFilled(false);
+        btnDesktop.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnDesktop.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnDesktopMouseClicked(evt);
+            }
+        });
+        getContentPane().add(btnDesktop);
+        btnDesktop.setBounds(50, 100, 150, 170);
+
+        btnWeb.setBorder(null);
+        btnWeb.setContentAreaFilled(false);
+        btnWeb.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnWeb.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnWebMouseClicked(evt);
+            }
+        });
+        getContentPane().add(btnWeb);
+        btnWeb.setBounds(250, 100, 150, 170);
+
+        btnAndro.setBorder(null);
+        btnAndro.setContentAreaFilled(false);
+        btnAndro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAndro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAndroMouseClicked(evt);
+            }
+        });
+        getContentPane().add(btnAndro);
+        btnAndro.setBounds(450, 100, 150, 170);
+
         lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rplImage/Background_RPL.png"))); // NOI18N
         getContentPane().add(lblBackground);
         lblBackground.setBounds(0, 0, 650, 350);
@@ -101,6 +137,24 @@ public class MenuRpl extends javax.swing.JFrame {
         dragxmouse = evt.getX();
         dragymouse = evt.getY();
     }//GEN-LAST:event_jLabel1MousePressed
+
+    private void btnDesktopMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDesktopMouseClicked
+        // TODO add your handling code here:
+        new HalamanUtama().show();
+        dispose();
+    }//GEN-LAST:event_btnDesktopMouseClicked
+
+    private void btnWebMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnWebMouseClicked
+        // TODO add your handling code here:
+        new HalamanUtama().show();
+        dispose();
+    }//GEN-LAST:event_btnWebMouseClicked
+
+    private void btnAndroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAndroMouseClicked
+        // TODO add your handling code here:
+        new HalamanUtama().show();
+        dispose();
+    }//GEN-LAST:event_btnAndroMouseClicked
 
     /**
      * @param args the command line arguments
@@ -138,6 +192,9 @@ public class MenuRpl extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAndro;
+    private javax.swing.JButton btnDesktop;
+    private javax.swing.JButton btnWeb;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblBack;
     private javax.swing.JLabel lblBackground;
