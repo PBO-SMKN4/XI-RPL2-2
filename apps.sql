@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 09, 2020 at 09:35 AM
+-- Generation Time: Apr 15, 2020 at 04:53 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.4
 
@@ -54,25 +54,27 @@ CREATE TABLE `komentar` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `materi`
+--
+
+CREATE TABLE `materi` (
+  `RPL` varchar(225) NOT NULL,
+  `TKJ` varchar(225) NOT NULL,
+  `MM` varchar(225) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `table_data`
 --
 
 CREATE TABLE `table_data` (
   `title` varchar(255) NOT NULL,
-  `simbol` varchar(255) NOT NULL,
+  `simbol` blob NOT NULL,
   `deskripsi` varchar(255) NOT NULL,
-  `jurusan` varchar(50) NOT NULL,
-  `materi` varchar(50) NOT NULL
+  `jurusan` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `table_data`
---
-
-INSERT INTO `table_data` (`title`, `simbol`, `deskripsi`, `jurusan`, `materi`) VALUES
-('MM', 'bg_jurusan.png', 'ini adalah pembalajaran Materi MM (Multimedia) ', 'MM', 'MM'),
-('RPL', 'bg_jurusan.png', 'ini adalah pembalajaran Materi RPL(Rekayasa Perangkat Lunak) ', 'RPL', 'RPL'),
-('TKJ', 'bg_jurusan.png', 'ini adalah pembalajaran Materi RPL(Rekayasa Perangkat Lunak) ', 'TKJ', 'TKJ');
 
 --
 -- Indexes for dumped tables
@@ -83,20 +85,22 @@ INSERT INTO `table_data` (`title`, `simbol`, `deskripsi`, `jurusan`, `materi`) V
 --
 ALTER TABLE `datasiswa`
   ADD PRIMARY KEY (`NIS`),
-  ADD KEY `id_komentar` (`id_komentar`);
+  ADD KEY `id_komentar` (`id_komentar`),
+  ADD KEY `jurusan` (`jurusan`);
 
 --
 -- Indexes for table `komentar`
 --
 ALTER TABLE `komentar`
   ADD PRIMARY KEY (`id_komentar`),
-  ADD KEY `NIS` (`NIS`);
+  ADD KEY `NIS` (`NIS`),
+  ADD KEY `jurusan` (`jurusan`);
 
 --
 -- Indexes for table `table_data`
 --
 ALTER TABLE `table_data`
-  ADD PRIMARY KEY (`title`);
+  ADD PRIMARY KEY (`jurusan`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -122,13 +126,15 @@ ALTER TABLE `komentar`
 -- Constraints for table `datasiswa`
 --
 ALTER TABLE `datasiswa`
-  ADD CONSTRAINT `datasiswa_ibfk_1` FOREIGN KEY (`id_komentar`) REFERENCES `komentar` (`id_komentar`);
+  ADD CONSTRAINT `datasiswa_ibfk_1` FOREIGN KEY (`id_komentar`) REFERENCES `komentar` (`id_komentar`),
+  ADD CONSTRAINT `datasiswa_ibfk_2` FOREIGN KEY (`jurusan`) REFERENCES `table_data` (`jurusan`);
 
 --
 -- Constraints for table `komentar`
 --
 ALTER TABLE `komentar`
-  ADD CONSTRAINT `komentar_ibfk_1` FOREIGN KEY (`NIS`) REFERENCES `datasiswa` (`NIS`);
+  ADD CONSTRAINT `komentar_ibfk_1` FOREIGN KEY (`NIS`) REFERENCES `datasiswa` (`NIS`),
+  ADD CONSTRAINT `komentar_ibfk_2` FOREIGN KEY (`jurusan`) REFERENCES `table_data` (`jurusan`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
