@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 15, 2020 at 04:53 PM
+-- Generation Time: Apr 15, 2020 at 05:00 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.4
 
@@ -75,6 +75,15 @@ CREATE TABLE `table_data` (
   `deskripsi` varchar(255) NOT NULL,
   `jurusan` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `table_data`
+--
+
+INSERT INTO `table_data` (`title`, `simbol`, `deskripsi`, `jurusan`) VALUES
+('MM', '', 'Ini adalah modul pembelajaran MM (Multimedia)', 'MM'),
+('RPL', '', 'Ini adalah modul pembalajaran RPL (rekayasa Perangkat Lunak) ', 'RPL'),
+('TKJ', '', 'Ini adalah modul pembelajaran TKJ (Tehnik Komputer dan Jaringan) ', 'TKJ');
 
 --
 -- Indexes for dumped tables
