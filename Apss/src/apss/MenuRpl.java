@@ -30,6 +30,7 @@ public class MenuRpl extends javax.swing.JFrame {
         lblClose = new javax.swing.JLabel();
         lblBack = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        Desktop = new javax.swing.JLabel();
         lblBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
@@ -68,6 +69,14 @@ public class MenuRpl extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(40, 0, 570, 40);
 
+        Desktop.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DesktopMouseClicked(evt);
+            }
+        });
+        getContentPane().add(Desktop);
+        Desktop.setBounds(40, 90, 170, 190);
+
         lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rplImage/Background_RPL.png"))); // NOI18N
         getContentPane().add(lblBackground);
         lblBackground.setBounds(0, 0, 650, 350);
@@ -101,6 +110,10 @@ public class MenuRpl extends javax.swing.JFrame {
         dragxmouse = evt.getX();
         dragymouse = evt.getY();
     }//GEN-LAST:event_jLabel1MousePressed
+
+    private void DesktopMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DesktopMouseClicked
+        new HalamanUtama().show();
+    }//GEN-LAST:event_DesktopMouseClicked
 
     /**
      * @param args the command line arguments
@@ -138,6 +151,7 @@ public class MenuRpl extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Desktop;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblBack;
     private javax.swing.JLabel lblBackground;

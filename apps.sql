@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 15, 2020 at 05:00 PM
+-- Generation Time: Apr 25, 2020 at 12:52 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.4
 
@@ -40,6 +40,41 @@ CREATE TABLE `datasiswa` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `data_mm`
+--
+
+CREATE TABLE `data_mm` (
+  `cinematography` longblob NOT NULL,
+  `2d desain` longblob NOT NULL,
+  `3d desain` longblob NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `data_rpl`
+--
+
+CREATE TABLE `data_rpl` (
+  `Desktop` longblob NOT NULL,
+  `web` longblob NOT NULL,
+  `android` longblob NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `data_tkj`
+--
+
+CREATE TABLE `data_tkj` (
+  `network learning` longblob NOT NULL,
+  `hardware learning` longblob NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `komentar`
 --
 
@@ -50,18 +85,6 @@ CREATE TABLE `komentar` (
   `jurusan` varchar(50) NOT NULL,
   `materi` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `materi`
---
-
-CREATE TABLE `materi` (
-  `RPL` varchar(225) NOT NULL,
-  `TKJ` varchar(225) NOT NULL,
-  `MM` varchar(225) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
