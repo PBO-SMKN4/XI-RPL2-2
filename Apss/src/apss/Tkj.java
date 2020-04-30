@@ -38,10 +38,20 @@ public class Tkj extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         lblHardware.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblHardware.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblHardwareMouseClicked(evt);
+            }
+        });
         getContentPane().add(lblHardware);
         lblHardware.setBounds(370, 80, 190, 240);
 
         lblNetwork.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblNetwork.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblNetworkMouseClicked(evt);
+            }
+        });
         getContentPane().add(lblNetwork);
         lblNetwork.setBounds(82, 78, 180, 240);
 
@@ -81,6 +91,22 @@ public class Tkj extends javax.swing.JFrame {
         new Jurusan().show();
         dispose();
     }//GEN-LAST:event_lblBackMouseClicked
+
+    private void lblNetworkMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNetworkMouseClicked
+        // TODO add your handling code here:
+        HalamanUtama a = new HalamanUtama();
+        a.network();
+        a.show();
+        dispose();
+    }//GEN-LAST:event_lblNetworkMouseClicked
+
+    private void lblHardwareMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHardwareMouseClicked
+        // TODO add your handling code here:
+        HalamanUtama a = new HalamanUtama();
+        a.hardware();
+        a.show();
+        dispose();
+    }//GEN-LAST:event_lblHardwareMouseClicked
 
     /**
      * @param args the command line arguments

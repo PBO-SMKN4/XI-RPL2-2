@@ -119,14 +119,26 @@ public class Multimedia extends javax.swing.JFrame {
 
     private void cinemaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cinemaMouseClicked
         // TODO add your handling code here:
+        HalamanUtama a = new HalamanUtama();
+        a.cinema();
+        a.show();
+        dispose();
     }//GEN-LAST:event_cinemaMouseClicked
 
     private void duaDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_duaDMouseClicked
         // TODO add your handling code here:
+        HalamanUtama a = new HalamanUtama();
+        a.duaD();
+        a.show();
+        dispose();
     }//GEN-LAST:event_duaDMouseClicked
 
     private void tigaDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tigaDMouseClicked
         // TODO add your handling code here:
+        HalamanUtama a = new HalamanUtama();
+        a.tigaD();
+        a.show();
+        dispose();
     }//GEN-LAST:event_tigaDMouseClicked
 
     private void mmMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mmMouseClicked

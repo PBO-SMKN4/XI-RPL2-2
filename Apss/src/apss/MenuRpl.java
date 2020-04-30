@@ -148,13 +148,17 @@ public class MenuRpl extends javax.swing.JFrame {
 
     private void btnWebMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnWebMouseClicked
         // TODO add your handling code here:
-        new HalamanUtama().show();
+        HalamanUtama a = new HalamanUtama();
+        a.web();
+        a.show();
         dispose();
     }//GEN-LAST:event_btnWebMouseClicked
 
     private void btnAndroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAndroMouseClicked
         // TODO add your handling code here:
-        new HalamanUtama().show();
+        HalamanUtama a = new HalamanUtama();
+        a.android();
+        a.show();
         dispose();
     }//GEN-LAST:event_btnAndroMouseClicked
 

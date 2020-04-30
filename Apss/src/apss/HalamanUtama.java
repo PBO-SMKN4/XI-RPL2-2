@@ -25,41 +25,165 @@ public class HalamanUtama extends javax.swing.JFrame {
     public HalamanUtama() {
         initComponents();
         JFrame frame = new JFrame();
-        frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        frame.setVisible(true);
-        koneksi = DatabaseConnection.getKoneksi("localhost", "3306", "root", "", "apps");
+        //frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        //frame.setVisible(true);
+        koneksi = DatabaseConnection.getKoneksi("localhost", "3306", "root", "", "apss");
         desktop();
+        web();
+        android();
+        network();
+        hardware();
+        cinema();
+        duaD();
+        tigaD();
     }
 
     public void desktop(){
         try {
             Statement stmt = koneksi.createStatement();
-            String query = "SELECT * FROM table_data where jurusan = 'RPL'";
+            String query = "SELECT table_data.title, table_data.deskripsi, table_data.simbol, data_rpl.judul_materi FROM table_data, data_rpl WHERE table_data.jurusan = data_rpl.jurusan AND id_rpl = 1";
             ResultSet rs = stmt.executeQuery(query);
-            while(rs.first())
+            while(rs.next())
             {
-                this.title.setText(rs.getString("jurusan"));
+                title.setText(rs.getString("title"));
+                namaMateri.setText(rs.getString("judul_materi"));
+                deskripsi.setText(rs.getString("deskripsi"));
             }
-        }catch (SQLException ex) {
+       }catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+    
+    public void web(){
+        try {
+            Statement stmt = koneksi.createStatement();
+            String query = "SELECT table_data.title, table_data.deskripsi, table_data.simbol, data_rpl.judul_materi FROM table_data, data_rpl WHERE table_data.jurusan = data_rpl.jurusan AND id_rpl = 2";
+            ResultSet rs = stmt.executeQuery(query);
+            while(rs.next())
+            {
+                title.setText(rs.getString("title"));
+                namaMateri.setText(rs.getString("judul_materi"));
+                deskripsi.setText(rs.getString("deskripsi"));
+            }
+       }catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+    
+    public void android(){
+        try {
+            Statement stmt = koneksi.createStatement();
+            String query = "SELECT table_data.title, table_data.deskripsi, table_data.simbol, data_rpl.judul_materi FROM table_data, data_rpl WHERE table_data.jurusan = data_rpl.jurusan AND id_rpl = 3";
+            ResultSet rs = stmt.executeQuery(query);
+            while(rs.next())
+            {
+                title.setText(rs.getString("title"));
+                namaMateri.setText(rs.getString("judul_materi"));
+                deskripsi.setText(rs.getString("deskripsi"));
+            }
+       }catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+    
+    public void network(){
+        try {
+            Statement stmt = koneksi.createStatement();
+            String query = "SELECT table_data.title, table_data.deskripsi, table_data.simbol, data_tkj.judul_materi FROM table_data, data_tkj WHERE table_data.jurusan = data_tkj.jurusan AND id_tkj = 1";
+            ResultSet rs = stmt.executeQuery(query);
+            while(rs.next())
+            {
+                title.setText(rs.getString("title"));
+                namaMateri.setText(rs.getString("judul_materi"));
+                deskripsi.setText(rs.getString("deskripsi"));
+            }
+       }catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+    
+    public void hardware(){
+        try {
+            Statement stmt = koneksi.createStatement();
+            String query = "SELECT table_data.title, table_data.deskripsi, table_data.simbol, data_tkj.judul_materi FROM table_data, data_tkj WHERE table_data.jurusan = data_tkj.jurusan AND id_tkj = 2";
+            ResultSet rs = stmt.executeQuery(query);
+            while(rs.next())
+            {
+                title.setText(rs.getString("title"));
+                namaMateri.setText(rs.getString("judul_materi"));
+                deskripsi.setText(rs.getString("deskripsi"));
+            }
+       }catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+    
+    public void cinema(){
+        try {
+            Statement stmt = koneksi.createStatement();
+            String query = "SELECT table_data.title, table_data.deskripsi, table_data.simbol, data_mm.judul_materi FROM table_data, data_mm WHERE table_data.jurusan = data_mm.jurusan AND id_mm = 1";
+            ResultSet rs = stmt.executeQuery(query);
+            while(rs.next())
+            {
+                title.setText(rs.getString("title"));
+                namaMateri.setText(rs.getString("judul_materi"));
+                deskripsi.setText(rs.getString("deskripsi"));
+            }
+       }catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+    
+    public void duaD(){
+        try {
+            Statement stmt = koneksi.createStatement();
+            String query = "SELECT table_data.title, table_data.deskripsi, table_data.simbol, data_mm.judul_materi FROM table_data, data_mm WHERE table_data.jurusan = data_mm.jurusan AND id_mm = 2";
+            ResultSet rs = stmt.executeQuery(query);
+            while(rs.next())
+            {
+                title.setText(rs.getString("title"));
+                namaMateri.setText(rs.getString("judul_materi"));
+                deskripsi.setText(rs.getString("deskripsi"));
+            }
+       }catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+    
+    public void tigaD(){
+        try {
+            Statement stmt = koneksi.createStatement();
+            String query = "SELECT table_data.title, table_data.deskripsi, table_data.simbol, data_mm.judul_materi FROM table_data, data_mm WHERE table_data.jurusan = data_mm.jurusan AND id_mm = 3";
+            ResultSet rs = stmt.executeQuery(query);
+            while(rs.next())
+            {
+                title.setText(rs.getString("title"));
+                namaMateri.setText(rs.getString("judul_materi"));
+                deskripsi.setText(rs.getString("deskripsi"));
+            }
+       }catch (SQLException ex) {
             ex.printStackTrace();
         }
     }
     
     @SuppressWarnings("unchecked")
     
-    private void descMateri(java.awt.event.MouseEvent evt) {                                       
+    //private void descMateri(java.awt.event.MouseEvent evt) {                                       
         
-    }
+    //}
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         lblMateri = new javax.swing.JLabel();
         lblBar = new javax.swing.JLabel();
         btnChat = new javax.swing.JLabel();
+        garis = new javax.swing.JLabel();
         title = new javax.swing.JLabel();
         Deskripsi = new javax.swing.JLabel();
+        namaMateri = new javax.swing.JLabel();
+        simbol = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        descMateri = new javax.swing.JTextArea();
+        deskripsi = new javax.swing.JLabel();
         inpChat = new javax.swing.JTextField();
         formChat = new javax.swing.JInternalFrame();
         bgChat = new javax.swing.JLabel();
@@ -81,27 +205,44 @@ public class HalamanUtama extends javax.swing.JFrame {
         getContentPane().add(btnChat);
         btnChat.setBounds(500, 680, 60, 60);
 
-        title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/halamanutamaimages/lblTitle_1.png"))); // NOI18N
-        title.setLabelFor(title);
-        title.setText("hai");
+        garis.setIcon(new javax.swing.ImageIcon("D:\\puja\\XI-RPL2-2\\Apss\\src\\halamanutamaimages\\lblTitle_1.png")); // NOI18N
+        garis.setLabelFor(garis);
+        getContentPane().add(garis);
+        garis.setBounds(40, 90, 525, 12);
+
+        title.setFont(new java.awt.Font("Agency FB", 0, 50)); // NOI18N
+        title.setForeground(new java.awt.Color(14, 179, 233));
+        title.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        title.setText("TITLE");
         getContentPane().add(title);
-        title.setBounds(30, 34, 540, 90);
+        title.setBounds(190, 30, 80, 60);
 
         Deskripsi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/halamanutamaimages/lblDeskripsi_1.png"))); // NOI18N
         getContentPane().add(Deskripsi);
         Deskripsi.setBounds(760, 510, 280, 50);
 
+        namaMateri.setFont(new java.awt.Font("Agency FB", 0, 30)); // NOI18N
+        namaMateri.setForeground(new java.awt.Color(14, 179, 233));
+        namaMateri.setText("Materi");
+        getContentPane().add(namaMateri);
+        namaMateri.setBounds(270, 50, 270, 30);
+
+        simbol.setFont(new java.awt.Font("Agency FB", 0, 20)); // NOI18N
+        simbol.setForeground(new java.awt.Color(14, 179, 233));
+        simbol.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        simbol.setText("SIMBOL");
+        getContentPane().add(simbol);
+        simbol.setBounds(60, 30, 110, 60);
+
+        jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane1.setBorder(null);
         jScrollPane1.setOpaque(false);
 
-        descMateri.setEditable(false);
-        descMateri.setColumns(20);
-        descMateri.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        descMateri.setForeground(new java.awt.Color(102, 102, 102));
-        descMateri.setRows(5);
-        descMateri.setText("Pertemuan 1 - Introduction\nMateri Pengenalan terhadap Pemrograman Dekstop.");
-        descMateri.setBorder(null);
-        jScrollPane1.setViewportView(descMateri);
+        deskripsi.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        deskripsi.setForeground(new java.awt.Color(102, 102, 102));
+        deskripsi.setText("Ini adalah modul pembelajaran");
+        deskripsi.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jScrollPane1.setViewportView(deskripsi);
 
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(760, 570, 590, 160);
@@ -167,6 +308,7 @@ public class HalamanUtama extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new HalamanUtama().setVisible(true);
             }
@@ -177,13 +319,16 @@ public class HalamanUtama extends javax.swing.JFrame {
     private javax.swing.JLabel Deskripsi;
     private javax.swing.JLabel bgChat;
     private javax.swing.JLabel btnChat;
-    private javax.swing.JTextArea descMateri;
+    private javax.swing.JLabel deskripsi;
     private javax.swing.JInternalFrame formChat;
+    private javax.swing.JLabel garis;
     private javax.swing.JTextField inpChat;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblBackground;
     private javax.swing.JLabel lblBar;
     private javax.swing.JLabel lblMateri;
+    private javax.swing.JLabel namaMateri;
+    private javax.swing.JLabel simbol;
     private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
 }
