@@ -10,7 +10,7 @@ package apss;
  * @author WhatzitTooya
  */
 public class MenuRpl extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form MenuRpl
      */
@@ -140,7 +140,9 @@ public class MenuRpl extends javax.swing.JFrame {
 
     private void btnDesktopMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDesktopMouseClicked
         // TODO add your handling code here:
-        new HalamanUtama().show();
+        HalamanUtama a = new HalamanUtama();
+        a.desktop();
+        a.show();
         dispose();
     }//GEN-LAST:event_btnDesktopMouseClicked
 

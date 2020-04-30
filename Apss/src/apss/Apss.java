@@ -5,15 +5,8 @@
  */
 package apss;
 
-/**
- *
- * @author Asus
- */
 public class Apss {
-
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) {
         Jurusan a = new Jurusan();
         a.setVisible(true);
