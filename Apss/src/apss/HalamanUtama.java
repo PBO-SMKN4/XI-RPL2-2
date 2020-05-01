@@ -194,6 +194,11 @@ public class HalamanUtama extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         lblMateri.setIcon(new javax.swing.ImageIcon(getClass().getResource("/halamanutamaimages/Materi.png"))); // NOI18N
+        lblMateri.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblMateriMouseClicked(evt);
+            }
+        });
         getContentPane().add(lblMateri);
         lblMateri.setBounds(760, 70, 570, 430);
 
@@ -205,7 +210,6 @@ public class HalamanUtama extends javax.swing.JFrame {
         getContentPane().add(btnChat);
         btnChat.setBounds(500, 680, 60, 60);
 
-        garis.setIcon(new javax.swing.ImageIcon("D:\\puja\\XI-RPL2-2\\Apss\\src\\halamanutamaimages\\lblTitle_1.png")); // NOI18N
         garis.setLabelFor(garis);
         getContentPane().add(garis);
         garis.setBounds(40, 90, 525, 12);
@@ -278,6 +282,10 @@ public class HalamanUtama extends javax.swing.JFrame {
     private void inpChatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inpChatActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_inpChatActionPerformed
+
+    private void lblMateriMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMateriMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblMateriMouseClicked
 
     /**
      * @param args the command line arguments
