@@ -24,8 +24,7 @@ import javax.swing.JOptionPane;
  *
  * @author Asus
  */
-public class HalamanUtama extends javax.swing.JFrame {
-    static ServerSocket ss; 
+public class HalamanUtama2 extends javax.swing.JFrame {
     static Socket s;
     static DataInputStream dis;
     static DataOutputStream dout;
@@ -35,7 +34,7 @@ public class HalamanUtama extends javax.swing.JFrame {
      */
     Connection koneksi;
     
-    public HalamanUtama() {
+    public HalamanUtama2() {
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
         //JFrame frame = new JFrame();
@@ -253,7 +252,7 @@ public class HalamanUtama extends javax.swing.JFrame {
             }
         });
         getContentPane().add(msg_send);
-        msg_send.setBounds(730, 715, 70, 30);
+        msg_send.setBounds(730, 715, 60, 30);
 
         jPanel1.setBackground(new java.awt.Color(38, 42, 51));
 
@@ -798,34 +797,35 @@ public class HalamanUtama extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(HalamanUtama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HalamanUtama2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(HalamanUtama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HalamanUtama2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(HalamanUtama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HalamanUtama2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(HalamanUtama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HalamanUtama2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new HalamanUtama().setVisible(true);
+                new HalamanUtama2().setVisible(true);
             }
         });
         
                try {
             String msgin="";
-            ss=new ServerSocket(1200);
-            s=ss.accept();
+
+            s = new Socket("127.0.0.1",1200);
             dis = new DataInputStream(s.getInputStream());
             dout = new DataOutputStream(s.getOutputStream());
             
             while(!msgin.equals("exit")){
                 msgin = dis.readUTF();
-                msg_area.setText(msg_area.getText() + "\n client : " + msgin );
+                msg_area.setText(msg_area.getText() + "\n server : " + msgin );
             }
             
             
