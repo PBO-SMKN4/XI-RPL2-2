@@ -37,59 +37,61 @@ CREATE TABLE IF NOT EXISTS `datasiswa` (
 
 -- Dumping structure for table apss.data_mm
 CREATE TABLE IF NOT EXISTS `data_mm` (
-  `id_mm` int(11) NOT NULL AUTO_INCREMENT,
-  `jurusan` varchar(50) DEFAULT NULL,
+  `id_mm` int(11) NOT NULL,
+  `jurusan` varchar(20) DEFAULT NULL,
+  `id_materi` int(11) DEFAULT NULL,
   `judul_materi` varchar(100) DEFAULT NULL,
-  `materi` longblob,
   PRIMARY KEY (`id_mm`),
+  KEY `id_materi` (`id_materi`),
   KEY `jurusan` (`jurusan`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Dumping data for table apss.data_mm: ~3 rows (approximately)
 /*!40000 ALTER TABLE `data_mm` DISABLE KEYS */;
-INSERT INTO `data_mm` (`id_mm`, `jurusan`, `judul_materi`, `materi`) VALUES
-	(1, 'MM', 'Cinematoghraphy', _binary ''),
-	(2, 'MM', '2D Desain', _binary ''),
-	(3, 'MM', '3D Desain', _binary '');
+INSERT INTO `data_mm` (`id_mm`, `jurusan`, `id_materi`, `judul_materi`) VALUES
+	(1, 'MM', NULL, NULL),
+	(2, 'MM', NULL, NULL);
 /*!40000 ALTER TABLE `data_mm` ENABLE KEYS */;
 
 -- Dumping structure for table apss.data_rpl
 CREATE TABLE IF NOT EXISTS `data_rpl` (
-  `id_rpl` int(11) NOT NULL AUTO_INCREMENT,
-  `jurusan` varchar(50) DEFAULT NULL,
+  `id_rpl` int(11) NOT NULL,
+  `jurusan` varchar(20) DEFAULT NULL,
+  `id_materi` int(11) DEFAULT NULL,
   `judul_materi` varchar(100) DEFAULT NULL,
-  `materi` longblob,
   PRIMARY KEY (`id_rpl`),
+  KEY `id_materi` (`id_materi`),
   KEY `jurusan` (`jurusan`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table apss.data_rpl: ~3 rows (approximately)
+-- Dumping data for table apss.data_rpl: ~4 rows (approximately)
 /*!40000 ALTER TABLE `data_rpl` DISABLE KEYS */;
-INSERT INTO `data_rpl` (`id_rpl`, `jurusan`, `judul_materi`, `materi`) VALUES
-	(1, 'RPL', 'Desktop', _binary ''),
-	(2, 'RPL', 'Web', _binary ''),
-	(3, 'RPL', 'Android', _binary '');
+INSERT INTO `data_rpl` (`id_rpl`, `jurusan`, `id_materi`, `judul_materi`) VALUES
+	(1, 'RPL', NULL, 'Desktop'),
+	(2, 'RPL', NULL, 'Web'),
+	(3, 'RPL', NULL, 'Android');
 /*!40000 ALTER TABLE `data_rpl` ENABLE KEYS */;
 
 -- Dumping structure for table apss.data_tkj
 CREATE TABLE IF NOT EXISTS `data_tkj` (
-  `id_tkj` int(11) NOT NULL AUTO_INCREMENT,
-  `jurusan` varchar(50) DEFAULT NULL,
+  `id_tkj` int(11) NOT NULL,
+  `jurusan` varchar(20) DEFAULT NULL,
+  `id_materi` int(11) DEFAULT NULL,
   `judul_materi` varchar(100) DEFAULT NULL,
-  `materi` longblob,
   PRIMARY KEY (`id_tkj`),
+  KEY `id_materi` (`id_materi`),
   KEY `jurusan` (`jurusan`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Dumping data for table apss.data_tkj: ~6 rows (approximately)
 /*!40000 ALTER TABLE `data_tkj` DISABLE KEYS */;
-INSERT INTO `data_tkj` (`id_tkj`, `jurusan`, `judul_materi`, `materi`) VALUES
-	(1, 'TKJ', 'Network Learning', _binary 0x4D656E67696E7374616C6173692053697374656D204F706572617369204A6172696E67616E204265726261736973204755492E706466),
-	(2, 'TKJ', 'Network Learning', _binary 0x496E7374616C61736920506572616E676B6174204A6172696E67616E204C6F6B616C204C414E2E706466),
-	(3, 'TKJ', 'Network Learning', _binary 0x496E7374616C6173692053697374656D204F706572617369204A6172696E67616E20426572626173697320546578742E706466),
-	(4, 'TKJ', 'Network Learning', _binary 0x4D656C616B756B616E205065726261696B616E2044616E2053657474696E6720556C616E67204B6F6E656B7369204A6172696E67616E2E706466),
-	(5, 'TKJ', 'Network Learning', _binary 0x4D656E646961676E6F736973205065726D6173616C6168616E2050656E676F706572617369616E2050432059616E672054657273616D62756E67204A6172696E67616E2E706466),
-	(6, 'TKJ', 'Hardware Learning', _binary 0x496E7374616C6173692053697374656D204F70657261736920426572626173697320546578742E706466);
+INSERT INTO `data_tkj` (`id_tkj`, `jurusan`, `id_materi`, `judul_materi`) VALUES
+	(1, 'TKJ', 1, 'Hardware Learning'),
+	(2, 'TKJ', 2, 'Network Learning'),
+	(3, 'TKJ', 3, 'Network Learning'),
+	(4, 'TKJ', 4, 'Network Learning'),
+	(5, 'TKJ', 5, 'Network Learning'),
+	(6, 'TKJ', 6, 'Network Learning');
 /*!40000 ALTER TABLE `data_tkj` ENABLE KEYS */;
 
 -- Dumping structure for table apss.komentar
@@ -107,6 +109,31 @@ CREATE TABLE IF NOT EXISTS `komentar` (
 -- Dumping data for table apss.komentar: ~0 rows (approximately)
 /*!40000 ALTER TABLE `komentar` DISABLE KEYS */;
 /*!40000 ALTER TABLE `komentar` ENABLE KEYS */;
+
+-- Dumping structure for table apss.materi
+CREATE TABLE IF NOT EXISTS `materi` (
+  `id_materi` int(11) NOT NULL,
+  `judul` varchar(100) NOT NULL DEFAULT '',
+  `materi` longblob NOT NULL,
+  PRIMARY KEY (`id_materi`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Dumping data for table apss.materi: ~12 rows (approximately)
+/*!40000 ALTER TABLE `materi` DISABLE KEYS */;
+INSERT INTO `materi` (`id_materi`, `judul`, `materi`) VALUES
+	(1, 'Instalasi Sistem Operasi Berbasis Text', _binary 0x496E7374616C6173692053697374656D204F70657261736920426572626173697320546578742E706466),
+	(2, 'Instalasi Perangkat Jaringan Lokal LAN', _binary 0x496E7374616C61736920506572616E676B6174204A6172696E67616E204C6F6B616C204C414E2E706466),
+	(3, 'Instalasi Sistem Operasi Jaringan Berbasis Text', _binary 0x496E7374616C6173692053697374656D204F706572617369204A6172696E67616E20426572626173697320546578742E706466),
+	(4, 'Melakukan Perbaikan Dan Setting Ulang Koneksi Jaringan', _binary 0x4D656C616B756B616E205065726261696B616E2044616E2053657474696E6720556C616E67204B6F6E656B7369204A6172696E67616E2E706466),
+	(5, 'Mendiagnosis Permasalahan Pengoperasian PC Yang Tersambung Jaringan', _binary 0x4D656E646961676E6F736973205065726D6173616C6168616E2050656E676F706572617369616E2050432059616E672054657273616D62756E67204A6172696E67616E2E706466),
+	(6, 'Menginstalasi Sistem Operasi Jaringan Berbasis GUI', _binary 0x4D656E67696E7374616C6173692053697374656D204F706572617369204A6172696E67616E204265726261736973204755492E706466),
+	(7, 'Camera Set-Up', _binary 0x43616D657261205365742D55702E706466),
+	(8, 'CORELDRAW', _binary 0x4D4F44554C5F434F52454C445241572E706466),
+	(9, 'Membuat Mobile Apps', _binary 0x4D656D62756174206D6F62696C6520617070732E706466),
+	(10, 'Membuat Mobile Apps 2', _binary 0x4D656D62756174206D6F62696C65206170707320322E706466),
+	(11, 'Pemrograman Desktop Dengan Python', _binary 0x62756B752D70656D726F6772616D616E2D6465736B746F702D64676E2D707974686F6E2E706466),
+	(12, 'Bahasa Pemrograman', _binary 0x42756B75204261686173612050656D726F6772616D616E2E706466);
+/*!40000 ALTER TABLE `materi` ENABLE KEYS */;
 
 -- Dumping structure for table apss.table_data
 CREATE TABLE IF NOT EXISTS `table_data` (
@@ -126,36 +153,39 @@ INSERT INTO `table_data` (`title`, `simbol`, `deskripsi`, `jurusan`) VALUES
 /*!40000 ALTER TABLE `table_data` ENABLE KEYS */;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `datasiswa`
+-- Ketidakleluasaan untuk tabel `datasiswa`
 --
 ALTER TABLE `datasiswa`
   ADD CONSTRAINT `datasiswa_ibfk_1` FOREIGN KEY (`id_komentar`) REFERENCES `komentar` (`id_komentar`),
   ADD CONSTRAINT `datasiswa_ibfk_2` FOREIGN KEY (`jurusan`) REFERENCES `table_data` (`jurusan`);
 
 --
--- Constraints for table `data_mm`
+-- Ketidakleluasaan untuk tabel `data_mm`
 --
 ALTER TABLE `data_mm`
-  ADD CONSTRAINT `data_mm_ibfk_1` FOREIGN KEY (`jurusan`) REFERENCES `table_data` (`jurusan`);
+  ADD CONSTRAINT `data_mm_ibfk_1` FOREIGN KEY (`id_materi`) REFERENCES `materi` (`id_materi`),
+  ADD CONSTRAINT `data_mm_ibfk_2` FOREIGN KEY (`jurusan`) REFERENCES `table_data` (`jurusan`);
 
 --
--- Constraints for table `data_rpl`
+-- Ketidakleluasaan untuk tabel `data_rpl`
 --
 ALTER TABLE `data_rpl`
-  ADD CONSTRAINT `data_rpl_ibfk_1` FOREIGN KEY (`jurusan`) REFERENCES `table_data` (`jurusan`);
+  ADD CONSTRAINT `data_rpl_ibfk_1` FOREIGN KEY (`id_materi`) REFERENCES `materi` (`id_materi`),
+  ADD CONSTRAINT `data_rpl_ibfk_2` FOREIGN KEY (`jurusan`) REFERENCES `table_data` (`jurusan`);
 
 --
--- Constraints for table `data_tkj`
+-- Ketidakleluasaan untuk tabel `data_tkj`
 --
 ALTER TABLE `data_tkj`
-  ADD CONSTRAINT `data_tkj_ibfk_1` FOREIGN KEY (`jurusan`) REFERENCES `table_data` (`jurusan`);
+  ADD CONSTRAINT `data_tkj_ibfk_1` FOREIGN KEY (`id_materi`) REFERENCES `materi` (`id_materi`),
+  ADD CONSTRAINT `data_tkj_ibfk_2` FOREIGN KEY (`jurusan`) REFERENCES `table_data` (`jurusan`);
 
 --
--- Constraints for table `komentar`
+-- Ketidakleluasaan untuk tabel `komentar`
 --
 ALTER TABLE `komentar`
   ADD CONSTRAINT `komentar_ibfk_1` FOREIGN KEY (`NIS`) REFERENCES `datasiswa` (`NIS`),
