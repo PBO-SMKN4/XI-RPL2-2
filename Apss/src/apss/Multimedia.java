@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -227,6 +228,8 @@ public class Multimedia extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 }
 =======
+=======
+>>>>>>> 81b184bd4f68a617edd94e3454d22c4e830157b2
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -438,4 +441,7 @@ public class Multimedia extends javax.swing.JFrame {
     private javax.swing.JLabel tigaD;
     // End of variables declaration//GEN-END:variables
 }
+<<<<<<< HEAD
+>>>>>>> 81b184bd4f68a617edd94e3454d22c4e830157b2
+=======
 >>>>>>> 81b184bd4f68a617edd94e3454d22c4e830157b2
