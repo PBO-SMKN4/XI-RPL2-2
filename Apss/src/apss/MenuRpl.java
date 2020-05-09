@@ -5,6 +5,10 @@
  */
 package apss;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author WhatzitTooya
@@ -141,7 +145,11 @@ public class MenuRpl extends javax.swing.JFrame {
     private void btnDesktopMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDesktopMouseClicked
         // TODO add your handling code here:
         HalamanUtama a = new HalamanUtama();
-        a.desktop();
+        try {
+            a.desktop("Materi/Phyton.pdf");
+        } catch (IOException ex) {
+            Logger.getLogger(Multimedia.class.getName()).log(Level.SEVERE, null, ex);
+        }
         a.show();
         dispose();
     }//GEN-LAST:event_btnDesktopMouseClicked
@@ -149,7 +157,11 @@ public class MenuRpl extends javax.swing.JFrame {
     private void btnWebMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnWebMouseClicked
         // TODO add your handling code here:
         HalamanUtama a = new HalamanUtama();
-        a.web();
+        try {
+            a.web("Materi/Web.pdf");
+        } catch (IOException ex) {
+            Logger.getLogger(Multimedia.class.getName()).log(Level.SEVERE, null, ex);
+        }
         a.show();
         dispose();
     }//GEN-LAST:event_btnWebMouseClicked
@@ -157,7 +169,11 @@ public class MenuRpl extends javax.swing.JFrame {
     private void btnAndroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAndroMouseClicked
         // TODO add your handling code here:
         HalamanUtama a = new HalamanUtama();
-        a.android();
+        try {
+            a.android("Materi/Android.pdf");
+        } catch (IOException ex) {
+            Logger.getLogger(Multimedia.class.getName()).log(Level.SEVERE, null, ex);
+        }
         a.show();
         dispose();
     }//GEN-LAST:event_btnAndroMouseClicked
@@ -191,6 +207,7 @@ public class MenuRpl extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new MenuRpl().setVisible(true);
             }
