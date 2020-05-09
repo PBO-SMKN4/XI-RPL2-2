@@ -5,6 +5,10 @@
  */
 package apss;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author pujarchmnsyh
@@ -120,7 +124,11 @@ public class Multimedia extends javax.swing.JFrame {
     private void cinemaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cinemaMouseClicked
         // TODO add your handling code here:
         HalamanUtama a = new HalamanUtama();
-        a.cinema();
+        try {
+            a.cinema("Materi/Cinema.pdf");
+        } catch (IOException ex) {
+            Logger.getLogger(Multimedia.class.getName()).log(Level.SEVERE, null, ex);
+        }
         a.show();
         dispose();
     }//GEN-LAST:event_cinemaMouseClicked
@@ -128,7 +136,11 @@ public class Multimedia extends javax.swing.JFrame {
     private void duaDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_duaDMouseClicked
         // TODO add your handling code here:
         HalamanUtama a = new HalamanUtama();
-        a.duaD();
+        try {
+            a.duaD("Materi/2D.pdf");
+        } catch (IOException ex) {
+            Logger.getLogger(Multimedia.class.getName()).log(Level.SEVERE, null, ex);
+        }
         a.show();
         dispose();
     }//GEN-LAST:event_duaDMouseClicked
@@ -136,7 +148,11 @@ public class Multimedia extends javax.swing.JFrame {
     private void tigaDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tigaDMouseClicked
         // TODO add your handling code here:
         HalamanUtama a = new HalamanUtama();
-        a.tigaD();
+        try {
+            a.tigaD("Materi/3D.pdf");
+        } catch (IOException ex) {
+            Logger.getLogger(Multimedia.class.getName()).log(Level.SEVERE, null, ex);
+        }
         a.show();
         dispose();
     }//GEN-LAST:event_tigaDMouseClicked

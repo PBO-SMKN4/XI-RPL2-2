@@ -5,6 +5,10 @@
  */
 package apss;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Lenovo
@@ -95,7 +99,11 @@ public class Tkj extends javax.swing.JFrame {
     private void lblNetworkMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNetworkMouseClicked
         // TODO add your handling code here:
         HalamanUtama a = new HalamanUtama();
-        a.network();
+        try {
+            a.network("Materi/Network.pdf");
+        } catch (IOException ex) {
+            Logger.getLogger(Multimedia.class.getName()).log(Level.SEVERE, null, ex);
+        }
         a.show();
         dispose();
     }//GEN-LAST:event_lblNetworkMouseClicked
@@ -103,7 +111,11 @@ public class Tkj extends javax.swing.JFrame {
     private void lblHardwareMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHardwareMouseClicked
         // TODO add your handling code here:
         HalamanUtama a = new HalamanUtama();
-        a.hardware();
+        try {
+            a.hardware("Materi/Hardware.pdf");
+        } catch (IOException ex) {
+            Logger.getLogger(Multimedia.class.getName()).log(Level.SEVERE, null, ex);
+        }
         a.show();
         dispose();
     }//GEN-LAST:event_lblHardwareMouseClicked
