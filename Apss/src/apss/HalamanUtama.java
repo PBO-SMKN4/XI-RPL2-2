@@ -5,15 +5,19 @@
  */
 package apss;
 
+<<<<<<< HEAD
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+=======
+>>>>>>> 81b184bd4f68a617edd94e3454d22c4e830157b2
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JFrame;
 import java.sql.SQLException;
+<<<<<<< HEAD
 import javafx.animation.Animation;
 import javax.swing.JOptionPane;
 import java.sql.Connection;
@@ -57,6 +61,8 @@ import javax.swing.JPanel;
 import org.icepdf.ri.common.ComponentKeyBinding;
 import org.icepdf.ri.common.SwingController;
 import org.icepdf.ri.common.SwingViewBuilder;
+=======
+>>>>>>> 81b184bd4f68a617edd94e3454d22c4e830157b2
 /**
  *
  * @author Asus
@@ -70,6 +76,7 @@ public class HalamanUtama extends javax.swing.JFrame {
     
     public HalamanUtama() {
         initComponents();
+<<<<<<< HEAD
         setExtendedState(MAXIMIZED_BOTH);
         //JFrame frame = new JFrame();
         //frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -79,12 +86,30 @@ public class HalamanUtama extends javax.swing.JFrame {
     }
 
     public void desktop(String file) throws IOException{
+=======
+        JFrame frame = new JFrame();
+        //frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        //frame.setVisible(true);
+        koneksi = DatabaseConnection.getKoneksi("localhost", "3306", "root", "", "apss");
+        desktop();
+        web();
+        android();
+        network();
+        hardware();
+        cinema();
+        duaD();
+        tigaD();
+    }
+
+    public void desktop(){
+>>>>>>> 81b184bd4f68a617edd94e3454d22c4e830157b2
         try {
             Statement stmt = koneksi.createStatement();
             String query = "SELECT table_data.title, table_data.deskripsi, table_data.simbol, data_rpl.judul_materi FROM table_data, data_rpl WHERE table_data.jurusan = data_rpl.jurusan AND id_rpl = 1";
             ResultSet rs = stmt.executeQuery(query);
             while(rs.next())
             {
+<<<<<<< HEAD
                 materiDesktop();
                 SwingController control = new SwingController();
                 SwingViewBuilder factry = new SwingViewBuilder(control);
@@ -98,19 +123,29 @@ public class HalamanUtama extends javax.swing.JFrame {
                 title.setText(rs.getString("title"));
                 divisi.setText(rs.getString("judul_materi"));
                 deskripsii.setText(rs.getString("deskripsi"));
+=======
+                title.setText(rs.getString("title"));
+                namaMateri.setText(rs.getString("judul_materi"));
+                deskripsi.setText(rs.getString("deskripsi"));
+>>>>>>> 81b184bd4f68a617edd94e3454d22c4e830157b2
             }
        }catch (SQLException ex) {
             ex.printStackTrace();
         }
     }
     
+<<<<<<< HEAD
     public void web(String file) throws IOException{
+=======
+    public void web(){
+>>>>>>> 81b184bd4f68a617edd94e3454d22c4e830157b2
         try {
             Statement stmt = koneksi.createStatement();
             String query = "SELECT table_data.title, table_data.deskripsi, table_data.simbol, data_rpl.judul_materi FROM table_data, data_rpl WHERE table_data.jurusan = data_rpl.jurusan AND id_rpl = 2";
             ResultSet rs = stmt.executeQuery(query);
             while(rs.next())
             {
+<<<<<<< HEAD
                 materiWeb();
                 SwingController control = new SwingController();
                 SwingViewBuilder factry = new SwingViewBuilder(control);
@@ -124,19 +159,29 @@ public class HalamanUtama extends javax.swing.JFrame {
                 title.setText(rs.getString("title"));
                 divisi.setText(rs.getString("judul_materi"));
                 deskripsii.setText(rs.getString("deskripsi"));
+=======
+                title.setText(rs.getString("title"));
+                namaMateri.setText(rs.getString("judul_materi"));
+                deskripsi.setText(rs.getString("deskripsi"));
+>>>>>>> 81b184bd4f68a617edd94e3454d22c4e830157b2
             }
        }catch (SQLException ex) {
             ex.printStackTrace();
         }
     }
     
+<<<<<<< HEAD
     public void android(String file) throws IOException{
+=======
+    public void android(){
+>>>>>>> 81b184bd4f68a617edd94e3454d22c4e830157b2
         try {
             Statement stmt = koneksi.createStatement();
             String query = "SELECT table_data.title, table_data.deskripsi, table_data.simbol, data_rpl.judul_materi FROM table_data, data_rpl WHERE table_data.jurusan = data_rpl.jurusan AND id_rpl = 3";
             ResultSet rs = stmt.executeQuery(query);
             while(rs.next())
             {
+<<<<<<< HEAD
                 materiAndroid();
                 SwingController control = new SwingController();
                 SwingViewBuilder factry = new SwingViewBuilder(control);
@@ -150,19 +195,29 @@ public class HalamanUtama extends javax.swing.JFrame {
                 title.setText(rs.getString("title"));
                 divisi.setText(rs.getString("judul_materi"));
                 deskripsii.setText(rs.getString("deskripsi"));
+=======
+                title.setText(rs.getString("title"));
+                namaMateri.setText(rs.getString("judul_materi"));
+                deskripsi.setText(rs.getString("deskripsi"));
+>>>>>>> 81b184bd4f68a617edd94e3454d22c4e830157b2
             }
        }catch (SQLException ex) {
             ex.printStackTrace();
         }
     }
     
+<<<<<<< HEAD
     public void network(String file) throws IOException{
+=======
+    public void network(){
+>>>>>>> 81b184bd4f68a617edd94e3454d22c4e830157b2
         try {
             Statement stmt = koneksi.createStatement();
             String query = "SELECT table_data.title, table_data.deskripsi, table_data.simbol, data_tkj.judul_materi FROM table_data, data_tkj WHERE table_data.jurusan = data_tkj.jurusan AND id_tkj = 1";
             ResultSet rs = stmt.executeQuery(query);
             while(rs.next())
             {
+<<<<<<< HEAD
                 materiNetwork();
                 SwingController control = new SwingController();
                 SwingViewBuilder factry = new SwingViewBuilder(control);
@@ -176,19 +231,29 @@ public class HalamanUtama extends javax.swing.JFrame {
                 title.setText(rs.getString("title"));
                 divisi.setText(rs.getString("judul_materi"));
                 deskripsii.setText(rs.getString("deskripsi"));
+=======
+                title.setText(rs.getString("title"));
+                namaMateri.setText(rs.getString("judul_materi"));
+                deskripsi.setText(rs.getString("deskripsi"));
+>>>>>>> 81b184bd4f68a617edd94e3454d22c4e830157b2
             }
        }catch (SQLException ex) {
             ex.printStackTrace();
         }
     }
     
+<<<<<<< HEAD
     public void hardware(String file) throws IOException{
+=======
+    public void hardware(){
+>>>>>>> 81b184bd4f68a617edd94e3454d22c4e830157b2
         try {
             Statement stmt = koneksi.createStatement();
             String query = "SELECT table_data.title, table_data.deskripsi, table_data.simbol, data_tkj.judul_materi FROM table_data, data_tkj WHERE table_data.jurusan = data_tkj.jurusan AND id_tkj = 2";
             ResultSet rs = stmt.executeQuery(query);
             while(rs.next())
             {
+<<<<<<< HEAD
                 materiHardware();
                 SwingController control = new SwingController();
                 SwingViewBuilder factry = new SwingViewBuilder(control);
@@ -202,19 +267,29 @@ public class HalamanUtama extends javax.swing.JFrame {
                 title.setText(rs.getString("title"));
                 divisi.setText(rs.getString("judul_materi"));
                 deskripsii.setText(rs.getString("deskripsi"));
+=======
+                title.setText(rs.getString("title"));
+                namaMateri.setText(rs.getString("judul_materi"));
+                deskripsi.setText(rs.getString("deskripsi"));
+>>>>>>> 81b184bd4f68a617edd94e3454d22c4e830157b2
             }
        }catch (SQLException ex) {
             ex.printStackTrace();
         }
     }
     
+<<<<<<< HEAD
     public void cinema(String file) throws IOException{
+=======
+    public void cinema(){
+>>>>>>> 81b184bd4f68a617edd94e3454d22c4e830157b2
         try {
             Statement stmt = koneksi.createStatement();
             String query = "SELECT table_data.title, table_data.deskripsi, table_data.simbol, data_mm.judul_materi FROM table_data, data_mm WHERE table_data.jurusan = data_mm.jurusan AND id_mm = 1";
             ResultSet rs = stmt.executeQuery(query);
             while(rs.next())
             {
+<<<<<<< HEAD
                 materiCinema();
                 SwingController control = new SwingController();
                 SwingViewBuilder factry = new SwingViewBuilder(control);
@@ -228,19 +303,29 @@ public class HalamanUtama extends javax.swing.JFrame {
                 title.setText(rs.getString("title"));
                 divisi.setText(rs.getString("judul_materi"));
                 deskripsii.setText(rs.getString("deskripsi"));
+=======
+                title.setText(rs.getString("title"));
+                namaMateri.setText(rs.getString("judul_materi"));
+                deskripsi.setText(rs.getString("deskripsi"));
+>>>>>>> 81b184bd4f68a617edd94e3454d22c4e830157b2
             }
        }catch (SQLException ex) {
             ex.printStackTrace();
         }
     }
     
+<<<<<<< HEAD
     public void duaD(String file) throws IOException{
+=======
+    public void duaD(){
+>>>>>>> 81b184bd4f68a617edd94e3454d22c4e830157b2
         try {
             Statement stmt = koneksi.createStatement();
             String query = "SELECT table_data.title, table_data.deskripsi, table_data.simbol, data_mm.judul_materi FROM table_data, data_mm WHERE table_data.jurusan = data_mm.jurusan AND id_mm = 2";
             ResultSet rs = stmt.executeQuery(query);
             while(rs.next())
             {
+<<<<<<< HEAD
                 materi2D();
                 SwingController control = new SwingController();
                 SwingViewBuilder factry = new SwingViewBuilder(control);
@@ -254,19 +339,29 @@ public class HalamanUtama extends javax.swing.JFrame {
                 title.setText(rs.getString("title"));
                 divisi.setText(rs.getString("judul_materi"));
                 deskripsii.setText(rs.getString("deskripsi"));
+=======
+                title.setText(rs.getString("title"));
+                namaMateri.setText(rs.getString("judul_materi"));
+                deskripsi.setText(rs.getString("deskripsi"));
+>>>>>>> 81b184bd4f68a617edd94e3454d22c4e830157b2
             }
        }catch (SQLException ex) {
             ex.printStackTrace();
         }
     }
     
+<<<<<<< HEAD
     public void tigaD(String file) throws IOException{
+=======
+    public void tigaD(){
+>>>>>>> 81b184bd4f68a617edd94e3454d22c4e830157b2
         try {
             Statement stmt = koneksi.createStatement();
             String query = "SELECT table_data.title, table_data.deskripsi, table_data.simbol, data_mm.judul_materi FROM table_data, data_mm WHERE table_data.jurusan = data_mm.jurusan AND id_mm = 3";
             ResultSet rs = stmt.executeQuery(query);
             while(rs.next())
             {
+<<<<<<< HEAD
                 materi3D();
                 SwingController control = new SwingController();
                 SwingViewBuilder factry = new SwingViewBuilder(control);
@@ -280,12 +375,18 @@ public class HalamanUtama extends javax.swing.JFrame {
                 title.setText(rs.getString("title"));
                 divisi.setText(rs.getString("judul_materi"));
                 deskripsii.setText(rs.getString("deskripsi"));
+=======
+                title.setText(rs.getString("title"));
+                namaMateri.setText(rs.getString("judul_materi"));
+                deskripsi.setText(rs.getString("deskripsi"));
+>>>>>>> 81b184bd4f68a617edd94e3454d22c4e830157b2
             }
        }catch (SQLException ex) {
             ex.printStackTrace();
         }
     }
     
+<<<<<<< HEAD
     public void materiDesktop() throws FileNotFoundException, IOException{
         byte[] fileBytes;
         try {
@@ -437,6 +538,8 @@ public class HalamanUtama extends javax.swing.JFrame {
     //    judulMateri.setEnabled(false);
     //}
     
+=======
+>>>>>>> 81b184bd4f68a617edd94e3454d22c4e830157b2
     @SuppressWarnings("unchecked")
     
     //private void descMateri(java.awt.event.MouseEvent evt) {                                       
@@ -445,6 +548,7 @@ public class HalamanUtama extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+<<<<<<< HEAD
         jPanel1 = new javax.swing.JPanel();
         btnMm = new javax.swing.JPanel();
         lblSideMM = new javax.swing.JLabel();
@@ -490,10 +594,26 @@ public class HalamanUtama extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         close = new javax.swing.JLabel();
         minimize = new javax.swing.JLabel();
+=======
+        lblMateri = new javax.swing.JLabel();
+        lblBar = new javax.swing.JLabel();
+        btnChat = new javax.swing.JLabel();
+        garis = new javax.swing.JLabel();
+        title = new javax.swing.JLabel();
+        Deskripsi = new javax.swing.JLabel();
+        namaMateri = new javax.swing.JLabel();
+        simbol = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        deskripsi = new javax.swing.JLabel();
+        inpChat = new javax.swing.JTextField();
+        formChat = new javax.swing.JInternalFrame();
+        bgChat = new javax.swing.JLabel();
+>>>>>>> 81b184bd4f68a617edd94e3454d22c4e830157b2
         lblBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
+<<<<<<< HEAD
         setUndecorated(true);
         getContentPane().setLayout(null);
 
@@ -732,11 +852,49 @@ public class HalamanUtama extends javax.swing.JFrame {
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
 
         lblBawahTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/halamanutamaimages/lblTitle_1.png"))); // NOI18N
+=======
+        getContentPane().setLayout(null);
+
+        lblMateri.setIcon(new javax.swing.ImageIcon(getClass().getResource("/halamanutamaimages/Materi.png"))); // NOI18N
+        getContentPane().add(lblMateri);
+        lblMateri.setBounds(760, 70, 570, 430);
+
+        lblBar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/halamanutamaimages/NavMateri.png"))); // NOI18N
+        getContentPane().add(lblBar);
+        lblBar.setBounds(760, 30, 570, 50);
+
+        btnChat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/halamanutamaimages/enter chat.png"))); // NOI18N
+        getContentPane().add(btnChat);
+        btnChat.setBounds(500, 680, 60, 60);
+
+        garis.setIcon(new javax.swing.ImageIcon("D:\\puja\\XI-RPL2-2\\Apss\\src\\halamanutamaimages\\lblTitle_1.png")); // NOI18N
+        garis.setLabelFor(garis);
+        getContentPane().add(garis);
+        garis.setBounds(40, 90, 525, 12);
+
+        title.setFont(new java.awt.Font("Agency FB", 0, 50)); // NOI18N
+        title.setForeground(new java.awt.Color(14, 179, 233));
+        title.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        title.setText("TITLE");
+        getContentPane().add(title);
+        title.setBounds(190, 30, 80, 60);
+
+        Deskripsi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/halamanutamaimages/lblDeskripsi_1.png"))); // NOI18N
+        getContentPane().add(Deskripsi);
+        Deskripsi.setBounds(760, 510, 280, 50);
+
+        namaMateri.setFont(new java.awt.Font("Agency FB", 0, 30)); // NOI18N
+        namaMateri.setForeground(new java.awt.Color(14, 179, 233));
+        namaMateri.setText("Materi");
+        getContentPane().add(namaMateri);
+        namaMateri.setBounds(270, 50, 270, 30);
+>>>>>>> 81b184bd4f68a617edd94e3454d22c4e830157b2
 
         simbol.setFont(new java.awt.Font("Agency FB", 0, 20)); // NOI18N
         simbol.setForeground(new java.awt.Color(14, 179, 233));
         simbol.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         simbol.setText("SIMBOL");
+<<<<<<< HEAD
 
         title.setFont(new java.awt.Font("Agency FB", 0, 50)); // NOI18N
         title.setForeground(new java.awt.Color(14, 179, 233));
@@ -960,12 +1118,49 @@ public class HalamanUtama extends javax.swing.JFrame {
         });
         getContentPane().add(minimize);
         minimize.setBounds(1239, 10, 45, 50);
+=======
+        getContentPane().add(simbol);
+        simbol.setBounds(60, 30, 110, 60);
+
+        jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane1.setBorder(null);
+        jScrollPane1.setOpaque(false);
+
+        deskripsi.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        deskripsi.setForeground(new java.awt.Color(102, 102, 102));
+        deskripsi.setText("Ini adalah modul pembelajaran");
+        deskripsi.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jScrollPane1.setViewportView(deskripsi);
+
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(760, 570, 590, 160);
+
+        inpChat.setBackground(new java.awt.Color(188, 188, 188));
+        inpChat.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        inpChat.setBorder(null);
+        inpChat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inpChatActionPerformed(evt);
+            }
+        });
+        getContentPane().add(inpChat);
+        inpChat.setBounds(50, 690, 420, 40);
+
+        formChat.setVisible(true);
+        getContentPane().add(formChat);
+        formChat.setBounds(30, 150, 550, 350);
+
+        bgChat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/halamanutamaimages/input chat.png"))); // NOI18N
+        getContentPane().add(bgChat);
+        bgChat.setBounds(30, 690, 470, 40);
+>>>>>>> 81b184bd4f68a617edd94e3454d22c4e830157b2
 
         lblBackground.setBackground(new java.awt.Color(255, 255, 255));
         lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/halamanutamaimages/bground.png"))); // NOI18N
         getContentPane().add(lblBackground);
         lblBackground.setBounds(0, 0, 1366, 768);
 
+<<<<<<< HEAD
         setSize(new java.awt.Dimension(1366, 768));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -1069,6 +1264,16 @@ public class HalamanUtama extends javax.swing.JFrame {
     }//GEN-LAST:event_materi3MouseClicked
 
     
+=======
+        setSize(new java.awt.Dimension(1382, 807));
+        setLocationRelativeTo(null);
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void inpChatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inpChatActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inpChatActionPerformed
+
+>>>>>>> 81b184bd4f68a617edd94e3454d22c4e830157b2
     /**
      * @param args the command line arguments
      */
@@ -1080,7 +1285,11 @@ public class HalamanUtama extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+<<<<<<< HEAD
                 if ("Windows".equals(info.getName())) {
+=======
+                if ("Nimbus".equals(info.getName())) {
+>>>>>>> 81b184bd4f68a617edd94e3454d22c4e830157b2
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -1106,6 +1315,7 @@ public class HalamanUtama extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+<<<<<<< HEAD
     private javax.swing.JPanel btnHome;
     private javax.swing.JPanel btnLogout;
     private javax.swing.JPanel btnMm;
@@ -1150,6 +1360,20 @@ public class HalamanUtama extends javax.swing.JFrame {
     private javax.swing.JLabel materi4;
     private javax.swing.JLabel materi5;
     private javax.swing.JLabel minimize;
+=======
+    private javax.swing.JLabel Deskripsi;
+    private javax.swing.JLabel bgChat;
+    private javax.swing.JLabel btnChat;
+    private javax.swing.JLabel deskripsi;
+    private javax.swing.JInternalFrame formChat;
+    private javax.swing.JLabel garis;
+    private javax.swing.JTextField inpChat;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblBackground;
+    private javax.swing.JLabel lblBar;
+    private javax.swing.JLabel lblMateri;
+    private javax.swing.JLabel namaMateri;
+>>>>>>> 81b184bd4f68a617edd94e3454d22c4e830157b2
     private javax.swing.JLabel simbol;
     private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
