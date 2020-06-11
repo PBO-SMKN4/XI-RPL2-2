@@ -67,6 +67,7 @@ public class HalamanUtama extends javax.swing.JFrame {
      * Creates new form HalamanUtama
      */
     Connection koneksi;
+    Enkaps id = new Enkaps();
     
     public HalamanUtama() {
         initComponents();
@@ -79,9 +80,10 @@ public class HalamanUtama extends javax.swing.JFrame {
     }
 
     public void desktop(String file) throws IOException{
+        id.setIdMateri("1");
         try {
             Statement stmt = koneksi.createStatement();
-            String query = "SELECT table_data.title, table_data.deskripsi, table_data.simbol, data_rpl.judul_materi FROM table_data, data_rpl WHERE table_data.jurusan = data_rpl.jurusan AND id_rpl = 1";
+            String query = "SELECT table_data.title, table_data.deskripsi, table_data.simbol, data_rpl.judul_materi FROM table_data, data_rpl WHERE table_data.jurusan = data_rpl.jurusan AND id_rpl = " + id.getIdMateri();
             ResultSet rs = stmt.executeQuery(query);
             while(rs.next())
             {
@@ -105,9 +107,10 @@ public class HalamanUtama extends javax.swing.JFrame {
     }
     
     public void web(String file) throws IOException{
+        id.setIdMateri("2");
         try {
             Statement stmt = koneksi.createStatement();
-            String query = "SELECT table_data.title, table_data.deskripsi, table_data.simbol, data_rpl.judul_materi FROM table_data, data_rpl WHERE table_data.jurusan = data_rpl.jurusan AND id_rpl = 2";
+            String query = "SELECT table_data.title, table_data.deskripsi, table_data.simbol, data_rpl.judul_materi FROM table_data, data_rpl WHERE table_data.jurusan = data_rpl.jurusan AND id_rpl = " + id.getIdMateri();
             ResultSet rs = stmt.executeQuery(query);
             while(rs.next())
             {
@@ -131,9 +134,10 @@ public class HalamanUtama extends javax.swing.JFrame {
     }
     
     public void android(String file) throws IOException{
+        id.setIdMateri("3");
         try {
             Statement stmt = koneksi.createStatement();
-            String query = "SELECT table_data.title, table_data.deskripsi, table_data.simbol, data_rpl.judul_materi FROM table_data, data_rpl WHERE table_data.jurusan = data_rpl.jurusan AND id_rpl = 3";
+            String query = "SELECT table_data.title, table_data.deskripsi, table_data.simbol, data_rpl.judul_materi FROM table_data, data_rpl WHERE table_data.jurusan = data_rpl.jurusan AND id_rpl = " + id.getIdMateri();
             ResultSet rs = stmt.executeQuery(query);
             while(rs.next())
             {
@@ -157,9 +161,10 @@ public class HalamanUtama extends javax.swing.JFrame {
     }
     
     public void network(String file) throws IOException{
+        id.setIdMateri("1");
         try {
             Statement stmt = koneksi.createStatement();
-            String query = "SELECT table_data.title, table_data.deskripsi, table_data.simbol, data_tkj.judul_materi FROM table_data, data_tkj WHERE table_data.jurusan = data_tkj.jurusan AND id_tkj = 1";
+            String query = "SELECT table_data.title, table_data.deskripsi, table_data.simbol, data_tkj.judul_materi FROM table_data, data_tkj WHERE table_data.jurusan = data_tkj.jurusan AND id_tkj = " + id.getIdMateri();
             ResultSet rs = stmt.executeQuery(query);
             while(rs.next())
             {
