@@ -5,6 +5,7 @@
  */
 package apss;
 
+import static apss.HalamanUtama.dout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -65,7 +66,7 @@ import org.icepdf.ri.common.SwingViewBuilder;
  *
  * @author Asus
  */
-public class HalamanUtama extends javax.swing.JFrame {
+public class HalamanUtama2 extends javax.swing.JFrame {
     
         static ServerSocket ss;
         static Socket s;
@@ -77,7 +78,7 @@ public class HalamanUtama extends javax.swing.JFrame {
      */
     Connection koneksi;
     
-    public HalamanUtama() {
+    public HalamanUtama2() {
         
         
         initComponents();
@@ -714,16 +715,16 @@ public class HalamanUtama extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
+                .addGap(42, 42, 42)
                 .addComponent(lblSMK)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(lblSMK, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(121, 121, 121)
+                .addGap(30, 30, 30)
+                .addComponent(lblSMK, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(124, 124, 124)
                 .addComponent(btnHome, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnRpl, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1097,6 +1098,7 @@ public class HalamanUtama extends javax.swing.JFrame {
     }//GEN-LAST:event_msg_textActionPerformed
 
     private void msg_sendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_msg_sendActionPerformed
+        
         try {
             String msg="";
             msg=msg_text.getText();
@@ -1105,6 +1107,7 @@ public class HalamanUtama extends javax.swing.JFrame {
         } catch (Exception e) {
              
         }
+
     }//GEN-LAST:event_msg_sendActionPerformed
 
     
@@ -1125,34 +1128,34 @@ public class HalamanUtama extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(HalamanUtama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HalamanUtama2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(HalamanUtama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HalamanUtama2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(HalamanUtama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HalamanUtama2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(HalamanUtama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HalamanUtama2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new HalamanUtama().setVisible(true);
+                new HalamanUtama2().setVisible(true);
             }
         });
         
         try {
             String msgin="";
-            ss=new ServerSocket (1201);
-            s=ss.accept();
+            s = new Socket("127.0.0.1", 1201);
             dis = new DataInputStream(s.getInputStream());
             dout = new DataOutputStream(s.getOutputStream());
             
             while (!msgin.equals("exit")) {
                 msgin = dis.readUTF();
-                msg_area.setText(msg_area.getText()+ "\n client : " + msgin);
+                msg_area.setText(msg_area.getText()+ "\n server : " + msgin);
             }
             
             
